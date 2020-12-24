@@ -1,0 +1,25 @@
+{% extends "chatting/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div style="padding:100px 400px;">
+     <center><form method="POST"> 
+           {% csrf_token %}
+           <fieldset class="form-group">
+                <center><h2 class="border-bottom mb-4">LOGIN </h2></center>
+                {{ form|crispy}}
+           </fieldset>
+           <center><div class="form-group">
+                 <button class="btn btn-outline-info" type="submit" style ="background-color: #008CBA;">Login</button>
+               <small class="text-muted ml-2">
+                <a style="color:black;font-family:mukta;font-size:130%" href="#">Forgot Password?</a>
+            </small>
+          </div></center>
+     </form></center>
+     <div class="border-top pt-3">
+            <center><h4 class="text-muted">
+              Need an account? <a style="color:black;font-size:85%;" href="{% url 'register'%}">Sign Up</a>
+            </h4></center>
+
+     </div>
+</div>
+{% endblock content %}
